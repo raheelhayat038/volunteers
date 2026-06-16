@@ -88,6 +88,23 @@
           strong Professional Details:
         .col-md-8
           = @volunteer.professional_details.join(" - ")
+      .row
+        .col-md-3
+          strong Availability Time:
+        .col-md-8
+          = @volunteer.availability&.join(" - ")
+
+      .row
+        .col-md-3
+          strong Availability Days:
+        .col-md-8
+          = @volunteer.availability_days&.join(" - ")
+
+      .row
+        .col-md-3
+          strong Short Bio:
+        .col-md-8
+          = @volunteer.bio.presence || "No bio provided"
 
       .row
         .col-md-3
