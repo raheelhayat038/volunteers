@@ -57,7 +57,7 @@
 
         <div class="col-sm-12">
           <%= f.label 'Hometown Address', class: 'form-label' %>
-          <%= f.text_field :hoemetown_address, class: 'form-control', placeholder: 'Hometown Address' %>
+          <%= f.text_field :hometown_address, class: 'form-control', placeholder: 'Hometown Address' %>
         </div>
 
         <div class="col-sm-6">
@@ -108,13 +108,11 @@
         <div class="col-sm-6">
           <%= f.label :area_of_interest, 'Area of Interest', class: 'form-label' %><br />
           <%= render partial: 'collection_check_boxes', locals: {collection: Volunteer::AREA_OF_INTEREST, f: f, name: 'volunteer[area_of_interest][]'} %>
-        </div>
-
-        <div class="col-sm-6">
-          <%= f.label 'Please mention days', class: 'form-label' %><br>
-          <%= render partial: 'collection_check_boxes', locals: {collection: Date::DAYNAMES, f: f, name: 'volunteer[availability_days][]'} %>
-        </div>
-
+ </div>
+<div class="col-sm-6">
+  <%= f.label 'Availability', class: 'form-label' %><br />
+  <%= render partial: 'collection_check_boxes', locals: {collection: ['morning', 'evening', 'flexible'], f: f, name: 'volunteer[availability][]'} %>
+</div>
         <div class="col-sm-6">
           <%= f.label 'How did you come to know about us?', class: 'form-label' %><br>
           <%= render partial: 'collection_check_boxes', locals: {collection: Volunteer::MARKETING_MEDIUM, f: f, name: 'volunteer[marketing_medium][]'} %>
